@@ -1,0 +1,175 @@
+/**
+ * Elf-mousE.github.io
+ * @author Elf-mousE
+ * @website http://elf-mouse.me/
+ * @since 2015.03.23
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font: 1.6rem/1.6 Arial, sans-serif;
+  display: flex;
+  height: inherit;
+  margin: 0;
+  color: #333;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    -ms-hyphens: auto;
+  }
+}
+
+a {
+  transition: color .2s;
+  text-decoration: none;
+  color: #0e90d2;
+  background-color: transparent;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+a:hover,
+a:focus {
+  color: #095f8a;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+h1::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: 'Elf-mousE.github.io';
+  transition: opacity 5s ease-in-out;
+  transform: rotate(90deg) translate(45%, 240%);
+  opacity: .3;
+}
+
+h1:hover::before {
+  transition: opacity .3s ease-out;
+  opacity: 1;
+}
+
+@-webkit-keyframes halo {
+  0% {
+    box-shadow: 0 0 .2em black;
+  }
+  50% {
+    box-shadow: 0 0 .8em black;
+  }
+  100% {
+    box-shadow: 0 0 .2em black;
+  }
+}
+
+@keyframes halo {
+  0% {
+    box-shadow: 0 0 .2em black;
+  }
+  50% {
+    box-shadow: 0 0 .8em black;
+  }
+  100% {
+    box-shadow: 0 0 .2em black;
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hello {
+  transition: -webkit-filter 3s ease-in-out;
+  -webkit-filter: blur(3px);
+}
+
+.hello:hover {
+  transition: -webkit-filter .3s linear;
+  -webkit-filter: blur(0);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+#me {
+  font: italic bold .7em/1 'Times New Roman', Georgia, Arial, sans-serif;
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  display: block;
+  padding: .1em .3em;
+  border-radius: 1em;
+}
+
+#me::before {
+  font-style: normal;
+  position: absolute;
+  bottom: 0;
+  left: -36%;
+  content: 'I\'m';
+  opacity: 0;
+  color: black;
+}
+
+#me:hover {
+  -webkit-animation: halo 1s infinite;
+  animation: halo 1s infinite;
+}
+
+#me:hover::before {
+  -webkit-animation: show .5s linear;
+  animation: show .5s linear;
+  opacity: 1;
+}
