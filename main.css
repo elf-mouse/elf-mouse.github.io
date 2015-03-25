@@ -20,7 +20,10 @@ html {
 }
 
 body {
-  font: 1.6rem/1.6 Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.6;
   display: flex;
   height: inherit;
   margin: 0;
@@ -35,8 +38,8 @@ body {
     word-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
-    hyphens: auto;
     -ms-hyphens: auto;
+    hyphens: auto;
   }
 }
 
@@ -75,6 +78,7 @@ h1::before {
   transition: opacity 5s ease-in-out;
   transform: rotate(90deg) translate(45%, 240%);
   opacity: .3;
+  text-shadow: 1px 1px 3px #541;
 }
 
 h1:hover::before {
@@ -144,7 +148,11 @@ h1:hover::before {
 }
 
 #me {
-  font: italic bold .7em/1 'Times New Roman', Georgia, Arial, sans-serif;
+  font-family: 'Times New Roman', Georgia, Arial, sans-serif;
+  font-size: .7em;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1;
   position: fixed;
   right: 1%;
   bottom: 1%;
@@ -172,4 +180,10 @@ h1:hover::before {
   -webkit-animation: show .5s linear;
   animation: show .5s linear;
   opacity: 1;
+}
+
+@media only screen and (max-width: 640px) {
+  #me::before {
+    opacity: 1;
+  }
 }
